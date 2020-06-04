@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 
-import ZipCode from './components/ZipCode';
 import SearchBar from './components/SearchBar';
 
 function App() 

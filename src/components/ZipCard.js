@@ -20,12 +20,12 @@ export default class ZipCard extends Component
     {
         return (
             <section>
-                <h3>{this.state.city}, {this.state.state}</h3>
+                <h3>{this.props.city}, {this.props.state}</h3>
                 <ul>
-                    <li>State: {this.state.state}</li>
-                    <li>Location: ({this.state.location})</li>
-                    <li>Populated (estimated): {this.state.population}</li>
-                    <li>Total Wages: {this.state.wages}</li>
+                    <li>State: {this.props.state}</li>
+                    <li>Location: ({this.props.location})</li>
+                    <li>Populated (estimated): {this.props.population}</li>
+                    <li>Total Wages: {this.props.wages}</li>
                 </ul>
             </section>
         );
