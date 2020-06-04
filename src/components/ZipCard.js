@@ -18,14 +18,21 @@ export default class ZipCard extends Component
 
     render()
     {
+        let props = this.props;
+        const city = props.city !== "" ? props.city : "N/A";
+        const state = props.state !== "" ? props.state : "N/A";
+        const location = props.location !== "" ? props.location : "N/A";
+        const population = props.population !== "" ? props.population : "N/A";
+        const wages = props.wages !== "" ? props.wages : "N/A";
+
         return (
             <section>
-                <h3>{this.props.city}, {this.props.state}</h3>
+                <h3>{city}, {state}</h3>
                 <ul>
-                    <li>State: {this.props.state}</li>
-                    <li>Location: ({this.props.location})</li>
-                    <li>Populated (estimated): {this.props.population}</li>
-                    <li>Total Wages: {this.props.wages}</li>
+                    <li>State: {state}</li>
+                    <li>Location: ({location})</li>
+                    <li>Populated (estimated): {population}</li>
+                    <li>Total Wages: {wages}</li>
                 </ul>
             </section>
         );
