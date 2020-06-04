@@ -17,6 +17,7 @@ export default class SearchBar extends Component
         event.preventDefault();
 
         this.setState({ prevSearch: event.target.searchbar.value });
+        event.target.reset();
     }
 
     render()
