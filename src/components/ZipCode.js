@@ -72,7 +72,7 @@ export default class ZipCode extends Component
     {
         let cards = [];
 
-        data.forEach(element => 
+        data.forEach((element, index) => 
         {
             const city = element.City;
             const state = element.State;
@@ -81,6 +81,7 @@ export default class ZipCode extends Component
             const wages = element.TotalWages;
 
             cards.push(<ZipCard 
+                key={index.toString()}
                 city={city} 
                 state={state}
                 location={location}

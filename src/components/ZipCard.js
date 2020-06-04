@@ -8,6 +8,7 @@ export default class ZipCard extends Component
         super(props);
         this.state =
         {
+            key: props.key,
             city: props.city,
             state: props.state,
             location: props.location,
@@ -19,6 +20,7 @@ export default class ZipCard extends Component
     render()
     {
         let props = this.props;
+        const key = props.key;
         const city = props.city !== "" ? props.city : "N/A";
         const state = props.state !== "" ? props.state : "N/A";
         const location = props.location !== "" ? props.location : "N/A";
@@ -26,7 +28,7 @@ export default class ZipCard extends Component
         const wages = props.wages !== "" ? props.wages : "N/A";
 
         return (
-            <section>
+            <section key={key}>
                 <h3>{city}, {state}</h3>
                 <ul>
                     <li>State: {state}</li>
@@ -41,6 +43,7 @@ export default class ZipCard extends Component
 
 ZipCard.propTypes =
 {
+    key: PropTypes.string.isRequired,
     city: PropTypes.string.isRequired,
     state: PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,
