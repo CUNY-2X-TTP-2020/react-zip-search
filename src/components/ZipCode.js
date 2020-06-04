@@ -63,8 +63,10 @@ export default class ZipCode extends Component
     {
         return (
             this.state.isFound ?
-            this.generateZipCards(this.state.data) : 
-            <p>No results found</p>
+            <section className="zip-card-grid">
+                {this.generateZipCards(this.state.data)}
+            </section>
+            : <p>No results found</p>
         );
     }
 

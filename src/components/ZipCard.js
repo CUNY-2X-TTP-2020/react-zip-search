@@ -28,9 +28,9 @@ export default class ZipCard extends Component
         const wages = props.wages !== "" ? props.wages : "N/A";
 
         return (
-            <section key={key}>
-                <h3>{city}, {state}</h3>
-                <ul>
+            <section className="zip-card" key={key}>
+                <h3 className="zip-card-title">{city}, {state}</h3>
+                <ul className="zip-card-details">
                     <li>State: {state}</li>
                     <li>Location: ({location})</li>
                     <li>Populated (estimated): {population}</li>
