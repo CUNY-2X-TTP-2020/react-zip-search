@@ -8,6 +8,7 @@ export default class ZipCard extends Component
         super(props);
         this.state =
         {
+            key: props.key,
             city: props.city,
             state: props.state,
             location: props.location,
@@ -18,14 +19,22 @@ export default class ZipCard extends Component
 
     render()
     {
+        let props = this.props;
+        const key = props.key;
+        const city = props.city !== "" ? props.city : "N/A";
+        const state = props.state !== "" ? props.state : "N/A";
+        const location = props.location !== "" ? props.location : "N/A";
+        const population = props.population !== "" ? props.population : "N/A";
+        const wages = props.wages !== "" ? props.wages : "N/A";
+
         return (
-            <section>
-                <h3>{this.props.city}, {this.props.state}</h3>
+            <section key={key}>
+                <h3>{city}, {state}</h3>
                 <ul>
-                    <li>State: {this.props.state}</li>
-                    <li>Location: ({this.props.location})</li>
-                    <li>Populated (estimated): {this.props.population}</li>
-                    <li>Total Wages: {this.props.wages}</li>
+                    <li>State: {state}</li>
+                    <li>Location: ({location})</li>
+                    <li>Populated (estimated): {population}</li>
+                    <li>Total Wages: {wages}</li>
                 </ul>
             </section>
         );
@@ -34,6 +43,7 @@ export default class ZipCard extends Component
 
 ZipCard.propTypes =
 {
+    key: PropTypes.string.isRequired,
     city: PropTypes.string.isRequired,
     state: PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,
