@@ -8,11 +8,11 @@ export default class ZipCard extends Component
         super(props);
         this.state =
         {
-            city: "",
-            state: "",
-            location: "",
-            population: "",
-            wages: ""
+            city: props.city,
+            state: props.state,
+            location: props.location,
+            population: props.population,
+            wages: props.wages
         }
     }
 
