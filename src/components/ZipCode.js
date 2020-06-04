@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import axios from 'axios';
+
 export default class ZipCode extends Component
 {
     constructor(props)
@@ -10,6 +12,11 @@ export default class ZipCode extends Component
         {
             zipCode: props.zipCode
         }
+    }
+
+    componentDidMount()
+    {
+        
     }
 
     render()
