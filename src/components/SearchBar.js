@@ -7,13 +7,16 @@ export default class SearchBar extends Component
         super(props);
         this.state =
         {
-
+            prevSearch: "Try 10016"
         }
     }
 
-    handleSubmit()
+    handleSubmit = (event) =>
     {
+        // Prevent browser reload/refresh
+        event.preventDefault();
 
+        this.setState({ prevSearch: event.target.searchbar.value });
     }
 
     render()
@@ -21,8 +24,8 @@ export default class SearchBar extends Component
         return (
             <section>
                 <form onSubmit={this.handleSubmit}>
-                    <label for="search-bar">Zip Code: </label>
-                    <input type="text" id="search-bar" />
+                    <label for="searchbar">Zip Code: </label>
+                    <input type="text" name="searchbar" id="searchbar" placeholder={this.state.prevSearch} />
                 </form>
             </section>
         );
