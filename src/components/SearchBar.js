@@ -29,7 +29,7 @@ export default class SearchBar extends Component
             this.state.hasSearched ?
             <section>
                 <form onSubmit={this.handleSubmit}>
-                    <label for="searchbar">Zip Code: </label>
+                    <div>Zip Code</div>
                     <input type="text" name="searchbar" id="searchbar" placeholder={this.state.prevSearch} />
                 </form>
                 <ZipCode zipCode={this.state.prevSearch}/>
@@ -37,7 +37,7 @@ export default class SearchBar extends Component
             :
             <section>
                 <form onSubmit={this.handleSubmit}>
-                    <label for="searchbar">Zip Code: </label>
+                    <div>Zip Code</div>
                     <input type="text" name="searchbar" id="searchbar" placeholder={this.state.prevSearch} />
                 </form>
             </section>
