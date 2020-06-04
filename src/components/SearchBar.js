@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import ZipCode from './ZipCode';
+
 export default class SearchBar extends Component
 {
     constructor(props)
@@ -7,7 +9,8 @@ export default class SearchBar extends Component
         super(props);
         this.state =
         {
-            prevSearch: "Try 10016"
+            prevSearch: "Try 10016",
+            hasSearched: false
         }
     }
 
@@ -16,13 +19,22 @@ export default class SearchBar extends Component
         // Prevent browser reload/refresh
         event.preventDefault();
 
-        this.setState({ prevSearch: event.target.searchbar.value });
+        this.setState({ prevSearch: event.target.searchbar.value, hasSearched: true });
         event.target.reset();
     }
 
     render()
     {
         return (
+            this.state.hasSearched ?
+            <section>
+                <form onSubmit={this.handleSubmit}>
+                    <label for="searchbar">Zip Code: </label>
+                    <input type="text" name="searchbar" id="searchbar" placeholder={this.state.prevSearch} />
+                </form>
+                <ZipCode zipCode={this.state.prevSearch}/>
+            </section>
+            :
             <section>
                 <form onSubmit={this.handleSubmit}>
                     <label for="searchbar">Zip Code: </label>
