@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import axios from 'axios';
 
+import ZipCard from './ZipCard';
 export default class ZipCode extends Component
 {
     constructor(props)
@@ -42,7 +43,26 @@ export default class ZipCode extends Component
 
     generateZipCards(data)
     {
-        
+        let cards = [];
+
+        data.forEach(element => 
+        {
+            const city = element.City;
+            const state = element.State;
+            const location = `${element.Lat}, ${element.Long}`;
+            const population = element.EstimatedPopulation;
+            const wages = element.TotalWages;
+
+            cards.push(<ZipCard 
+                city={city} 
+                state={state}
+                location={location}
+                population={population}
+                wages={wages}
+            />);
+        });
+
+        return cards;
     }
 }
 
