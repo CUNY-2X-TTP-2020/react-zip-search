@@ -10,6 +10,8 @@ function App()
             <header className="App-header">
                 <h1>Zip Code Search</h1>
                 <ZipCode zipCode={10016} />
+                <ZipCode />
+                <ZipCode zipCode={124124124} />
             </header>
         </div>
     );
