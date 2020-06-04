@@ -29,7 +29,11 @@ export default class ZipCode extends Component
 
             this.setState({ data, isFound: true });
         })
-        .catch((error) => console.log(error));
+        .catch((error) => 
+        {
+            console.log(error);
+            this.setState({ data: [], isFound: false });
+        });
     }
 
     render()
