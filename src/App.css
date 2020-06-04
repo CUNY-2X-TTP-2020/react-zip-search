@@ -59,6 +59,7 @@ input[type=text]:focus
 .zip-card-title
 {
     background-color: #1a548f;
+    border-radius: 25px;
 }
 
 .zip-card-details
