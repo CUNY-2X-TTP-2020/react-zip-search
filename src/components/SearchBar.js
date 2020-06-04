@@ -11,12 +11,20 @@ export default class SearchBar extends Component
         }
     }
 
+    handleSubmit()
+    {
+
+    }
+
     render()
     {
         return (
-            <>
-                
-            </>
+            <section>
+                <form onSubmit={this.handleSubmit}>
+                    <label for="search-bar">Zip Code: </label>
+                    <input type="text" id="search-bar" />
+                </form>
+            </section>
         );
     }
 }
