@@ -36,8 +36,8 @@ export default class ZipCode extends Component
     {
         return (
             this.state.isFound ?
-            this.generateZipCards(this.state.data)
-            : <></>
+            this.generateZipCards(this.state.data) : 
+            <p>No results found 🙁</p>
         );
     }
 
