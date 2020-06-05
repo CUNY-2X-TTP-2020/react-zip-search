@@ -21,7 +21,7 @@ export default class ZipCode extends Component
     componentDidMount()
     {
         const zip = this.state.zipCode;
-        const url = `http://ctp-zip-api.herokuapp.com/zip/${zip}`;
+        const url = `https://ctp-zip-api.herokuapp.com/zip/${zip}`;
 
         axios.get(url)
         .then((response) =>
